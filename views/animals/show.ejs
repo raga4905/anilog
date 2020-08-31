@@ -19,13 +19,33 @@
         <div><%= animal.user %></div>
     </section>
     <div>
-        
+
         <h2>Findings</h2>
         <form action="/animals/<%= animal._id %>/findings" method="POST">
             Add your interesting facts or findings here:
-            <input name="text">
+            <input name="content">
             <button type="submit">ADD FINDING</button>
         </form>
+        <% if (finding.length) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Finding</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% finding.forEach(function(f) { %>
+                <tr>
+                    <td><%= f.createdAt.toLocaleDateString() %></td>
+                    <td><%= f.content %></td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+        <% } else { %>
+        <h5>No Findings Yet</h5>
+        <% } %>
     </div>
 </body>
 
