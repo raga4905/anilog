@@ -22,7 +22,7 @@ function create(req, res) {
     if (!req.body.img) delete req.body.img;
     const animal = new Animal(req.body);
     animal.user = req.user._id;
-    // console.log(animal)
+    console.log(animal)
     animal.save(function (err) {
         if (err) return res.render('animals/new');
         res.redirect('/animals')
@@ -36,7 +36,6 @@ function newAnimal(req, res) {
 function show(req, res) {
     Animal.findById(req.params.id, function (err, animal) {
         Finding.find({ animal: animal._id }, function (err, finding) {
-            console.log(animal)
             res.render('animals/show', { title: 'Animal Details', animal, finding });
         })
     });

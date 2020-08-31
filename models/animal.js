@@ -36,10 +36,10 @@ const animalSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    finding: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Finding'
-    }]
+    // findings: [{
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Finding'
+    // }]
 });
 
 module.exports = mongoose.model('Animal', animalSchema);

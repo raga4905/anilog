@@ -19,10 +19,11 @@
         <div><%= animal.user %></div>
     </section>
     <div>
+        
         <h2>Findings</h2>
         <form action="/animals/<%= animal._id %>/findings" method="POST">
             Add your interesting facts or findings here:
-            <input name="findingText">
+            <input name="text">
             <button type="submit">ADD FINDING</button>
         </form>
     </div>

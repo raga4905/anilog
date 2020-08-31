@@ -3,7 +3,6 @@ var router = express.Router();
 const animalsCtrl = require('../controllers/animals.js')
 
 
-
 router.get('/', isLoggedIn, animalsCtrl.index)
 router.get('/new', isLoggedIn, animalsCtrl.new);
 router.get('/:id', isLoggedIn, animalsCtrl.show)
