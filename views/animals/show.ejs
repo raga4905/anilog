@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+
+<body>
+    <section id="show-page">
+        <!-- <div>Name</div> -->
+        <div><%= animal.name %></div>
+        <!-- <div>Species</div> -->
+        <div><img class="defaultimg" src="<%= animal.img %>"></div>
+        <div><%= animal.species %></div>
+        <!-- <div>Feeding Behavior</div> -->
+        <div><%= animal.eat %></div>
+        <div>Tool Use</div>
+        <div><%= animal.toolUse ? 'Yes' : 'No' %></div>
+        <!-- <div>Climate</div> -->
+        <div><%= animal.ecosystem %></div>
+        <div><%= animal.lifeSpan %></div>
+        <div><%= animal.conservationStatus %></div>
+        <div><%= animal.user %></div>
+    </section>
+    <div>
+        <h2>Findings</h2>
+        <form action="/animals/<%= animal._id %>/findings" method="POST">
+            Add your interesting facts or findings here:
+            <input name="findingText">
+            <button type="submit">ADD FINDING</button>
+        </form>
+    </div>
+</body>
+
+</html>

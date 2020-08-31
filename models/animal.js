@@ -6,37 +6,40 @@ const animalSchema = new Schema({
         type: String,
         required: true
     },
+    // get image to show up 
     img: {
         type: String, 
         default: 'https://image.flaticon.com/icons/svg/1527/1527246.svg'
     },
     species: {
         type: String,
-        required: true
     },
     eat: {
         type: String,
         enum: ['Herbivore', 'Omnivore', 'Carnivore', 'Detrivore'],
-        required: true
     },
     toolUse: {
         type: Boolean,
         default: false,
     },
-    climate: {
+    ecosystem: {
         type: String,
+        enum: ['Terrestrial', 'Forest', 'Grassland', 'Desert', 'Tundra', 'Freshwater', 'Marine', 'Other']
     },
     lifeSpan: {
-        type: Number
+        type: String
     },
     conservationStatus: {
         type: String,
-        required: true
     }, 
     user: {
-        type: String, 
-        required: true
-    }
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    finding: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Finding'
+    }]
 });
 
 module.exports = mongoose.model('Animal', animalSchema);

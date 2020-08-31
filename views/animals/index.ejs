@@ -1,6 +1,21 @@
 <%- include('../partials/header') %>
 
-<div>Hi!</div>
+<h1>All Animals</h1>
+<a href="/animals/new">New Animal</a>
+<div>
+    <div class="aniContain">
+        <% animals.forEach(function(a) {%>
+        <div>
+            <a href="animals/<%=a._id%>">
+                <img class="defaultimg" src="<%= a.img %>">
+        </div>
+        <div><%= a.name %></div>
+        <div>Naturalist: <%= a.user.name %></div>
+        </a>
+    </div>
+    <% }); %>
+</div>
+
 </body>
 
 </html>
