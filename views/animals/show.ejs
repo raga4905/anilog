@@ -32,6 +32,7 @@
                 <tr>
                     <th>Date</th>
                     <th>Finding</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +40,12 @@
                 <tr>
                     <td><%= f.createdAt.toLocaleDateString() %></td>
                     <td><%= f.content %></td>
+                    <!-- <td>
+                        <form action="/findings/<%= finding._id %>?_method=PUT" method="POST">
+                            <input name="content" value="<%= finding.content %>">
+                            <button type="submit">UPDATE FINDING</button>
+                        </form>
+                    </td> -->
                 </tr>
                 <% }); %>
             </tbody>

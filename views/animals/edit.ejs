@@ -1,0 +1,52 @@
+<!-- Tara -->
+
+<%- include('../partials/header') %>
+
+
+<form action="/animals/<%= animal._id %>?_method=PUT" method="POST">
+    <label>Edit Name:</label>
+    <input type="text" name="name">
+    <!-- <label>Image:</label>
+    <input type="text" id="img" name="img"> -->
+    <label>Edit Species:</label>
+    <input type="text" name="species">
+    <label>Edit Feeding Behaviors:</label>
+    <select name="eat">
+        <option value="Herbivore">Herbivore</option>
+        <option value="Omnivore">Omnivore</option>
+        <option value="Carnivore">Carnivore</option>
+        <option value="Detrivore">Detrivore</option>
+    </select>
+    <!-- get the checkbox to work for tool use -->
+    <label>Edit Tool Use:</label>
+    <input type="checkbox" name="toolUse" checked>
+    <label>Edit Ecosystem:</label>
+    <select name="ecosystem">
+        <option value="Terrestrial">Terrestrial</option>
+        <option value="Forest">Forest</option>
+        <option value="Grassland">Grassland</option>
+        <option value="Desert">Desert</option>
+        <option value="Tundra">Tundra</option>
+        <option value="Freshwater">Freshwater</option>
+        <option value="Marine">Marine</option>
+        <option value="Other">Other</option>
+    </select>
+    <label>Edit Life Span:</label>
+    <input type="text" name="lifeSpan">
+    <label>Edit Conservation Status</label>
+    <select name="conservationStatus">
+        <option value="Extinct in the wild">Extinct in the wild</option>
+        <option value="Critically endangered ">Critically endangered</option>
+        <option value="Endangered">Endangered</option>
+        <option value="Vulnerable">Vulnerable</option>
+        <option value="Near threatened">Near threatened</option>
+        <option value="Least concern">Least concern</option>
+        <option value="Data deficient">Data deficient</option>
+        <option value="Not evaluated">Not evaluated</option>
+    </select>
+    <button type="submit">Accept Changes</button>
+</form>
+<a href="/animals">Home</a>
+</body>
+
+</html>
