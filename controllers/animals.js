@@ -1,7 +1,6 @@
 const Animal = require('../models/animal');
 const Finding = require('../models/finding');
 const User = require('../models/user');
-const user = require('../models/user');
 
 module.exports = {
     index,
@@ -46,28 +45,32 @@ function show(req, res) {
 };
 
 
-// Tara
-// function edit(req, res) {
-//     Animal.findById(req.params.id, function (err, animal) {
-//         User.findById(req.user._id, function (err, user) {
-//             animal.user = req.user._id;
-//             if (!animal.user.equals(req.user._id)) return res.redirect('/animals');
-//             res.render('animals/edit', { title: 'Edit Animal', animal, user });
-//         })
-//     });
-// }
+function edit(req, res) {
+    Flight.findById(req.params.id, function (err, flight) {
+        if (err) {
+            res.redirect(`/flights`)
+        }
+        res.render('flights/edit', { flight, title: 'Edit Flight', flightDeparts: flight.departs.toISOString().slice(0, 16) })
+    })
+}
 
-// function update(req, res) {
-//     Animal.findByIdAndUpdate(req.params.id, req.body, function (err, animal) {
-//         User.findById(req.user._id, function (err, user) {
-//             console.log(animal, err, 'Hello!')
-//             animal.user = req.user._id;
-//             if (!animal.user.equals(req.user._id)) return res.render('animals/edit', { title: 'Edit Animal', animal, user });
-//             res.redirect('/animals');
-//         })
-//     });
-// }
-// Tara
+function edit(req, res) {
+    Animal.findById(req.params.id, function (err, animal) {
+        if (!animal.user.equals(req.user._id)) return res.redirect('/animals');
+        res.render('animals/edit', { title: 'Edit Animal', animal });
+    });
+}
+
+
+function update(req, res) {
+    Animal.findByIdAndUpdate(req.params.id, req.body, function (err, animal) {
+        if (err) {
+            res.render('animals/edit', { title: 'Edit Animal', animal });
+        };
+        res.redirect('/animals');
+    });
+}
+
 
 
 

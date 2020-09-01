@@ -9,8 +9,8 @@ router.get('/:id', isLoggedIn, animalsCtrl.show)
 router.post('/', isLoggedIn, animalsCtrl.create);
 
 // Tara
-// router.get('/:id/edit', animalsCtrl.edit);
-// router.put('/:id', animalsCtrl.update);
+router.get('/:id/edit', animalsCtrl.edit);
+router.put('/:id', animalsCtrl.update);
 
 
 function isLoggedIn(req, res, next) {

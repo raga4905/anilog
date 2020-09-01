@@ -5,13 +5,13 @@
 
 <form action="/animals/<%= animal._id %>?_method=PUT" method="POST">
     <label>Edit Name:</label>
-    <input type="text" name="name">
+    <input type="text" name="name" value="<%=animal.name%>">
     <!-- <label>Image:</label>
     <input type="text" id="img" name="img"> -->
     <label>Edit Species:</label>
-    <input type="text" name="species">
+    <input type="text" name="species" value="<%=animal.species%>">
     <label>Edit Feeding Behaviors:</label>
-    <select name="eat">
+    <select name="eat" value="<%=animal.eat%>">
         <option value="Herbivore">Herbivore</option>
         <option value="Omnivore">Omnivore</option>
         <option value="Carnivore">Carnivore</option>
@@ -19,9 +19,10 @@
     </select>
     <!-- get the checkbox to work for tool use -->
     <label>Edit Tool Use:</label>
-    <input type="checkbox" name="toolUse" checked>
+    <div><% const uses = animal.toolUse ? 'checked' : '' %></div>
+    <input type="checkbox" name="toolUse" value="<%=animal.toolUse%>" uses>
     <label>Edit Ecosystem:</label>
-    <select name="ecosystem">
+    <select name="ecosystem" value="<%=animal.ecosystem%>">
         <option value="Terrestrial">Terrestrial</option>
         <option value="Forest">Forest</option>
         <option value="Grassland">Grassland</option>
@@ -32,9 +33,9 @@
         <option value="Other">Other</option>
     </select>
     <label>Edit Life Span:</label>
-    <input type="text" name="lifeSpan">
+    <input type="text" name="lifeSpan" value="<%=animal.lifeSpan%>">
     <label>Edit Conservation Status</label>
-    <select name="conservationStatus">
+    <select name="conservationStatus" value="<%=animal.conservationStatus%>">
         <option value="Extinct in the wild">Extinct in the wild</option>
         <option value="Critically endangered ">Critically endangered</option>
         <option value="Endangered">Endangered</option>
@@ -46,7 +47,7 @@
     </select>
     <button type="submit">Accept Changes</button>
 </form>
-<a href="/animals">Home</a>
+
 </body>
 
 </html>
