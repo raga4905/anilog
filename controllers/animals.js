@@ -14,7 +14,7 @@ module.exports = {
 function index(req, res) {
     Animal.find({}).populate('user').exec(function (err, animals) {
         console.log(animals)
-        res.render('animals/index', { title: 'All Animals', animals })
+        res.render('animals/index', { title: 'All Animals', animals, user: req.user })
     })
 };
 
@@ -36,22 +36,12 @@ function newAnimal(req, res) {
 }
 
 function show(req, res) {
-    Animal.findById(req.params.id, function (err, animal) {
-        Finding.find({ animal: animal._id }, function (err, finding) {
-            res.render('animals/show', { title: 'Animal Details', animal, finding });
-        })
+    Animal.findById(req.params.id).populate('user').exec(function (err, animal) {
+        Finding.find({ animal: animal._id }).populate('user').exec(function (err, findings) {
+            res.render('animals/show', { title: 'Animal Details', animal, findings });
+        });
     });
 };
-
-
-function edit(req, res) {
-    Flight.findById(req.params.id, function (err, flight) {
-        if (err) {
-            res.redirect(`/flights`)
-        }
-        res.render('flights/edit', { flight, title: 'Edit Flight', flightDeparts: flight.departs.toISOString().slice(0, 16) })
-    })
-}
 
 function edit(req, res) {
     Animal.findById(req.params.id, function (err, animal) {
@@ -60,10 +50,8 @@ function edit(req, res) {
     });
 }
 
-
 function update(req, res) {
     req.body.toolUse = !!req.body.toolUse;
-    
     Animal.findByIdAndUpdate(req.params.id, req.body, function (err, animal) {
         if (err) {
             res.render('animals/edit', { title: 'Edit Animal', animal });

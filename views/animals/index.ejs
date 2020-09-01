@@ -1,23 +1,32 @@
 <%- include('../partials/header') %>
 
-<h1>All Animals</h1>
-<a href="/animals/new">New Animal</a>
-<div>
-    <div class="aniContain">
-        <% animals.forEach(function(a) {%>
-        <div>
-            <a href="animals/<%=a._id%>">
-                <img class="defaultimg" src="<%= a.img %>">
-        </div>
-        <div><%= a.name %></div>
-        <div>Naturalist: <%= a.user.name %></div>
-        </a>
-        <td><a href="/animals/<%= a._id %>/edit">Edit</a>
-        </td>
 
+
+<h1 class="title">All Animals</h1><br>
+
+
+<section class="containerCard">
+    <% animals.forEach(function(a) {%>
+    <div class="row">
+        <div class="column">
+            <a href="animals/<%=a._id%>">
+                <div class="card">
+                    <div>
+                        <img class="defaultimg" src="<%= a.img %>">
+                    </div>
+                    <div>
+                        <h5><%= a.name %></h5>
+                        <p>Naturalist: <%= a.user.name %>
+                    </div>
+                </div>
+            </a>
+            <% if (user && user._id.toString() === a.user._id.toString()) { %>
+            <a href="/animals/<%= a._id %>/edit">Edit</a>
+            <% } %>
+        </div>
     </div>
     <% }); %>
-</div>
+</section>
 
 </body>
 

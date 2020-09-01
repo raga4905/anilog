@@ -22,10 +22,9 @@ function create(req, res) {
 
 function deleteFinding(req, res) {
     console.log('Hello!!!!!!!!!!!!')
-    Animal.findById(req.params.id, function (err, animal) {
-        Finding.findByIdAndDelete(req.params.id, function (err) {
-            if (err) console.log(err);
-            res.redirect('/animals')
-        })
+    Finding.findOneAndDelete({ _id: req.params.id, user: req.user._id }, function (err, finding) {
+        if (err) console.log(err);
+        res.redirect(`/animals/${finding.animal}`)
     })
 }
+

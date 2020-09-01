@@ -1,13 +1,41 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: block;
 }
 
-a {
-  color: #00B7FF;
+.title {
+  color: black;
+  text-align: center;
 }
 
-.defaultimg {
-  height: 40px;
-  width: 40px;
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.4);
+  transition: 0.3s;
+  size: large;
+}
+
+.column {
+  float: left;
+  width: 25%;
+} 
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
 }

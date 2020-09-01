@@ -14,7 +14,7 @@
         <div><%= animal.ecosystem %></div>
         <div><%= animal.lifeSpan %></div>
         <div><%= animal.conservationStatus %></div>
-        <div><%= animal.user %></div>
+        <div><%= animal.user.name %></div>
 
     </section>
     <div>
@@ -25,20 +25,22 @@
             <input name="content">
             <button type="submit">ADD FINDING</button>
         </form>
-        <% if (finding.length) { %>
+        <% if (findings.length) { %>
         <table>
             <thead>
                 <tr>
                     <th>Date</th>
                     <th>Finding</th>
+                    <th>Naturalist</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <% finding.forEach(function(f) { %>
+                <% findings.forEach(function(f) { %>
                 <tr>
                     <td><%= f.createdAt.toLocaleDateString() %></td>
                     <td><%= f.content %></td>
+                    <td><%= f.user.name %></td>
                     <td><% if (f.user.equals(user._id)) { %>
                     <form action="/findings/<%= f._id %>?_method=DELETE" method="POST">
                         <button type="submit">X</button>
