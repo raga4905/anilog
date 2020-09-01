@@ -10,14 +10,12 @@
         <div><%= animal.species %></div>
         <!-- <div>Feeding Behavior</div> -->
         <div><%= animal.eat %></div>
-        <div>Tool Use</div>
-        <div><%= animal.toolUse ? 'Yes' : 'No' %></div>
-        <!-- <div>Climate</div> -->
+        <div>Tool Use? <%= animal.toolUse ? 'Yes' : 'No' %></div>
         <div><%= animal.ecosystem %></div>
         <div><%= animal.lifeSpan %></div>
         <div><%= animal.conservationStatus %></div>
         <div><%= animal.user %></div>
-        
+
     </section>
     <div>
 
@@ -41,12 +39,11 @@
                 <tr>
                     <td><%= f.createdAt.toLocaleDateString() %></td>
                     <td><%= f.content %></td>
-                    <!-- <td>
-                        <form action="/findings/<%= finding._id %>?_method=PUT" method="POST">
-                            <input name="content" value="<%= finding.content %>">
-                            <button type="submit">UPDATE FINDING</button>
-                        </form>
-                    </td> -->
+                    <td><% if (f.user.equals(user._id)) { %>
+                    <form action="/findings/<%= f._id %>?_method=DELETE" method="POST">
+                        <button type="submit">X</button>
+                    </form>
+                    <% } %></td>
                 </tr>
                 <% }); %>
             </tbody>

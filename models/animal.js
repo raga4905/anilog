@@ -6,7 +6,6 @@ const animalSchema = new Schema({
         type: String,
         required: true
     },
-    // get image to show up 
     img: {
         type: String, 
         default: 'https://image.flaticon.com/icons/svg/1527/1527246.svg'
@@ -36,10 +35,6 @@ const animalSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    // findings: [{
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Finding'
-    // }]
 });
 
 module.exports = mongoose.model('Animal', animalSchema);

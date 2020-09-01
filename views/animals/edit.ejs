@@ -6,9 +6,7 @@
 <form action="/animals/<%= animal._id %>?_method=PUT" method="POST">
     <label>Edit Name:</label>
     <input type="text" name="name" value="<%=animal.name%>">
-    <!-- <label>Image:</label>
-    <input type="text" id="img" name="img"> -->
-    <label>Edit Species:</label>
+    <label>Edit Genus:</label>
     <input type="text" name="species" value="<%=animal.species%>">
     <label>Edit Feeding Behaviors:</label>
     <select name="eat" value="<%=animal.eat%>">
@@ -17,7 +15,6 @@
         <option value="Carnivore">Carnivore</option>
         <option value="Detrivore">Detrivore</option>
     </select>
-    <!-- get the checkbox to work for tool use -->
     <label>Edit Tool Use:</label>
     <input type="checkbox" name="toolUse" value="<%=animal.toolUse%>" <%= animal.toolUse ? 'checked' : '' %>>
     <label>Edit Ecosystem:</label>
