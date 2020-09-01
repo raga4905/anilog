@@ -1,6 +1,6 @@
 const Animal = require('../models/animal');
 const Finding = require('../models/finding');
-const User = require('../models/user');
+// const User = require('../models/user');
 
 module.exports = {
     index,
@@ -21,7 +21,6 @@ function index(req, res) {
 // add .populate method to get user name to show up 
 function create(req, res) {
     req.body.toolUse = !!req.body.toolUse;
-    console.log(req.body);
     if (!req.body.img) delete req.body.img;
     const animal = new Animal(req.body);
     animal.user = req.user._id;
@@ -63,10 +62,13 @@ function edit(req, res) {
 
 
 function update(req, res) {
+    req.body.toolUse = !!req.body.toolUse;
+    
     Animal.findByIdAndUpdate(req.params.id, req.body, function (err, animal) {
         if (err) {
             res.render('animals/edit', { title: 'Edit Animal', animal });
         };
+        console.log(req.body)
         res.redirect('/animals');
     });
 }

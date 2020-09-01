@@ -19,8 +19,7 @@
     </select>
     <!-- get the checkbox to work for tool use -->
     <label>Edit Tool Use:</label>
-    <div><% const uses = animal.toolUse ? 'checked' : '' %></div>
-    <input type="checkbox" name="toolUse" value="<%=animal.toolUse%>" uses>
+    <input type="checkbox" name="toolUse" value="<%=animal.toolUse%>" <%= animal.toolUse ? 'checked' : '' %>>
     <label>Edit Ecosystem:</label>
     <select name="ecosystem" value="<%=animal.ecosystem%>">
         <option value="Terrestrial">Terrestrial</option>
