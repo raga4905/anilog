@@ -5,6 +5,8 @@
   <title><%= title %></title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://image.flaticon.com/icons/svg/1527/1527246.svg">
+
 </head>
 
 <body>
@@ -14,10 +16,11 @@
           alt="Anilog"><br><u>Anilog</u></h1>
       <h3>Your Digital Fieldbook</h3>
       <p><% if (user) { %>
-            <a class="login" href="/logout">Log Out</a>
-            <% } else { %>
-            <a class="login" href="/auth/google">Login with&nbsp;&nbsp;<img class="google" src="https://image.flaticon.com/icons/svg/2702/2702602.svg">&nbsp;&nbsp;Google</a>
-            <% } %></p>
+        <a class="login" href="/logout">Log Out</a>
+        <% } else { %>
+        <a class="login" href="/auth/google">Login with&nbsp;&nbsp;<img class="google"
+            src="https://image.flaticon.com/icons/svg/2702/2702602.svg">&nbsp;&nbsp;Google</a>
+        <% } %></p>
       <!-- <p><% if (user) { %>
               </a>Log Out
               <% } else { %>
