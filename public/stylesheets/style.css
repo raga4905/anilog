@@ -3,8 +3,15 @@ body {
   font: 14px;
   font-family: 'Julius Sans One', sans-serif;;
   display: block;
-  background-image: url("https://images.pexels.com/photos/861339/pexels-photo-861339.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
 
+.loginPage {
+  background-image: url("https://images.pexels.com/photos/861339/pexels-photo-861339.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background-size:100% 100%;
+}
+
+.insideWeb {
+  background-color: whitesmoke;
 }
 
 .title {
@@ -30,7 +37,7 @@ body {
 
 .navbar-fixed {
   overflow: hidden;
-  background-color: #333;
+  background-color: rgba(51, 51, 51, .8);
 }
 
 .navbar-fixed a {
@@ -71,6 +78,7 @@ body {
   box-shadow: 0 5px 10px 0 rgba(0,0,0,0.4);
   transition: 0.3s;
   size: large;
+  border-radius: 5%;
 }
 
 .column {
@@ -84,4 +92,88 @@ body {
     display: block;
     margin-bottom: 20px;
   }
+}
+
+.container-login {
+  margin: 50px auto;
+  width: 400px;
+  text-align: center;
+  padding: 20px 20px 20px;
+}
+
+.container-HIW {
+  margin: 50px auto;
+  width: 400px;
+  text-align: center;
+  border: 4px solid black;
+  border-radius: 10%;
+  background-color: white;
+  padding: 20px 20px 20px;
+}
+
+.container-HIW:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transform: scale(1.04);
+  border-top-color: grey;
+  transition: all .3s ease-in-out;
+}
+
+/* .anilog {
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10%;
+} */
+
+.login {
+	background-color: rgba(117, 173, 2);
+	border-radius:28px;
+	/* border:1px solid black; */
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #2f6627;
+}
+
+.login:hover {
+  background-color:#5cbf2a;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transform: scale(1.04);
+  border-top-color: grey;
+  transition: all .3s ease-in-out;
+}
+.login:active {
+	position:relative;
+	top:1px;
+}
+
+.icon {
+  height: 40px;
+  width: 40px;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 7px;
+}
+
+.icon-main {
+  height: 60px;
+  width: 60px;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 7px;
+}
+
+.icon:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transform: scale(1.04);
+  border-top-color: grey;
+  transition: all .3s ease-in-out;
+}
+
+.google {
+  height: 20px;
+  width: 20px;
 }
