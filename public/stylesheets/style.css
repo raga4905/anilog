@@ -1,16 +1,62 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px;
+  font-family: 'Julius Sans One', sans-serif;;
   display: block;
+  background-image: url("https://images.pexels.com/photos/861339/pexels-photo-861339.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+
 }
 
 .title {
   color: black;
   text-align: center;
+  padding-top: 5%;
+}
+
+.animalName {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.userName {
+  font-size: smaller;
+}
+
+.img {
+  height: 50%;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.navbar-fixed {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar-fixed a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar-fixed a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar-fixed a.active {
+  background-color: #4CAF50;
+  color: white;
 }
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transform: scale(1.04);
+  border-top-color: grey;
+  transition: all .3s ease-in-out;
 }
 
 .container {
@@ -18,7 +64,7 @@ body {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
   padding: 16px;
   text-align: center;
   background-color: #f1f1f1;

@@ -15,7 +15,7 @@ const animalSchema = new Schema({
     },
     eat: {
         type: String,
-        enum: ['Herbivore', 'Omnivore', 'Carnivore', 'Detrivore'],
+        enum: ['Herbivore', 'Omnivore', 'Carnivore', 'Detrivore', 'Insectivore'],
     },
     toolUse: {
         type: Boolean,
