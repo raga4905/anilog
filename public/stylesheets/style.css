@@ -44,11 +44,8 @@ body {
 .navbar-fixed a {
   float: left;
   color: #f2f2f2;
-  text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
   font-size: 17px;
-  
 }
 
 .navbar-fixed a:hover {
@@ -56,8 +53,9 @@ body {
   color: black;
 }
 
-.navbar-fixed a.active {
-  background-color: #4CAF50;
+.icon-nav {
+  height: 30px;
+  width: 30px;
   color: white;
 }
 
@@ -133,13 +131,10 @@ body {
 	background-color: rgba(117, 173, 2);
 	border-radius:28px;
 	border:1.5px solid #2f6627;
-	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
+	color:white;
 	font-size:15px;
   padding:16px 31px;
-	text-decoration:none;
   text-shadow:0px 1px 0px #2f6627;
   font-family: 'Julius Sans One', sans-serif;;
 }
@@ -223,4 +218,20 @@ body {
 
 .edit-button {
   color: white;
+}
+
+.findings {
+  text-align: center;
+}
+
+.findings-table {
+  margin-left:auto;
+  margin-right:auto;
+  width: 600px;
+  padding: 20%;
+  size: auto 40px auto 40px;
+  border-radius: 25px;
+  background-color: whitesmoke;
+  color: black;
+  text-align: center;
 }

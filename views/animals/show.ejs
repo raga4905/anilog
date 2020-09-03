@@ -12,19 +12,21 @@
         <div><%= animal.ecosystem %></div>
         <div><%= animal.lifeSpan %></div>
         <div><%= animal.conservationStatus %></div>
-        <div ><small><%= animal.user.name %></small></div>
+        <div ><i><small><%= animal.user.name %></small></i></div>
 
     </section>
-    <div>
 
+
+    <section class="findings">
         <h2>Findings</h2>
         <form action="/animals/<%= animal._id %>/findings" method="POST">
             Add your interesting facts or findings here:
             <input name="content">
             <button type="submit">ADD FINDING</button>
         </form>
+        <br><br>
         <% if (findings.length) { %>
-        <table>
+        <table class="findings-table">
             <thead>
                 <tr>
                     <th>Date</th>
@@ -51,7 +53,7 @@
         <% } else { %>
         <h5>No Findings Yet</h5>
         <% } %>
-    </div>
+        </section>
 </body>
 
 </html>

@@ -18,7 +18,7 @@ function index(req, res) {
     })
 };
 
-// add .populate method to get user name to show up 
+
 function create(req, res) {
     req.body.toolUse = !!req.body.toolUse;
     if (!req.body.img) delete req.body.img;
@@ -30,6 +30,8 @@ function create(req, res) {
         res.redirect('/animals')
     });
 }
+
+
 
 function newAnimal(req, res) {
     res.render('animals/new', { title: 'Add Animal' });
@@ -70,4 +72,21 @@ function update(req, res) {
 
 
 
-
+// function create(req, res) {
+//     req.body.toolUse = !!req.body.toolUse;
+//     Animal.count({name: req.body.name}, function (err, count) {
+//         if (count > 0) {
+//             Animal.find({ name: req.body.name }, function (err, animals) {
+//                 res.render('animals/index', { name: req.body.name})
+//             })
+//         } else {
+//             const animal = new Animal(req.body);
+//             animal.user = req.user._id;
+//             console.log(animal)
+//             animal.save(function (err) {
+//                 if (err) return res.render('animals/new');
+//                 res.redirect('/animals')
+//             });
+//         }
+//     })
+// }
