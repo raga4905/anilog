@@ -96,6 +96,14 @@ body {
   }
 }
 
+@media screen and (max-width: 200px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
 .container-login {
   margin: 50px auto;
   width: 400px;
