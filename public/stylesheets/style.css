@@ -6,7 +6,7 @@ body {
 }
 
 .loginPage {
-  background-image: url("https://images.pexels.com/photos/861339/pexels-photo-861339.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background-image: url("https://i.imgur.com/mqh5n3p.gif");
   background-size:100% 100%;
 }
 
@@ -94,16 +94,8 @@ body {
   }
 }
 
-@media screen and (max-width: 200px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}
-
 .container-login {
-  margin: 50px auto;
+  margin: auto auto auto auto;
   width: 400px;
   text-align: center;
   padding: 20px 20px 20px;
@@ -119,6 +111,7 @@ body {
   padding: 20px 20px 20px;
   padding-top: 10px;
 }
+
 
 .container-HIW:hover {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
