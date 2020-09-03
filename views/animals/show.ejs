@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 
-    <section id="show-page">
+    <section class="animal" id="show-page">
         <!-- <div>Name</div> -->
-        <h1><%= animal.name %></h1>
+        <h1 class="title"><%= animal.name %></h1>
         <!-- <div>Species</div> -->
         <div><img class="img" src="<%= animal.img %>"></div>
         <div><%= animal.species %></div>
@@ -12,7 +12,7 @@
         <div><%= animal.ecosystem %></div>
         <div><%= animal.lifeSpan %></div>
         <div><%= animal.conservationStatus %></div>
-        <div><%= animal.user.name %></div>
+        <div ><small><%= animal.user.name %></small></div>
 
     </section>
     <div>

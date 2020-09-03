@@ -4,10 +4,11 @@
 
 <section class="add-animal">
     <form action="/animals/<%= animal._id %>?_method=PUT" method="POST">
+        <img class="icon-new" src="https://image.flaticon.com/icons/svg/1527/1527246.svg" alt="Anilog"><br><br>
         <label>Edit Name:</label>
-        <input type="text" name="name" value="<%=animal.name%>">
+        <input type="text" name="name" value="<%=animal.name%>"><br><br>
         <label>Edit Scientific Name:</label>
-        <input type="text" name="species" value="<%=animal.species%>">
+        <input type="text" name="species" value="<%=animal.species%>"><br><br>
         <label>Edit Feeding Behaviors:</label>
         <select name="eat" value="<%=animal.eat%>">
             <option value="Herbivore">Herbivore</option>
@@ -15,9 +16,9 @@
             <option value="Carnivore">Carnivore</option>
             <option value="Detrivore">Detrivore</option>
             <option value="Insectivore">Insectivore</option>
-        </select>
+        </select><br><br>
         <label>Edit Tool Use:</label>
-        <input type="checkbox" name="toolUse" value="<%=animal.toolUse%>" <%= animal.toolUse ? 'checked' : '' %>>
+        <input type="checkbox" name="toolUse" value="<%=animal.toolUse%>" <%= animal.toolUse ? 'checked' : '' %>><br><br>
         <label>Edit Ecosystem:</label>
         <select name="ecosystem" value="<%=animal.ecosystem%>">
             <option value="Terrestrial">Terrestrial</option>
@@ -28,9 +29,9 @@
             <option value="Freshwater">Freshwater</option>
             <option value="Marine">Marine</option>
             <option value="Other">Other</option>
-        </select>
+        </select><br><br>
         <label>Edit Life Span:</label>
-        <input type="text" name="lifeSpan" value="<%=animal.lifeSpan%>">
+        <input type="text" name="lifeSpan" value="<%=animal.lifeSpan%>"><br><br>
         <label>Edit Conservation Status</label>
         <select name="conservationStatus" value="<%=animal.conservationStatus%>">
             <option value="Extinct in the wild">Extinct in the wild</option>
@@ -41,8 +42,8 @@
             <option value="Least concern">Least concern</option>
             <option value="Data deficient">Data deficient</option>
             <option value="Not evaluated">Not evaluated</option>
-        </select>
-        <button type="submit">Accept Changes</button>
+        </select><br><br>
+        <button class="login" type="submit">Accept Changes</button>
     </form>
 </section>
 

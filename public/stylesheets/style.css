@@ -11,7 +11,7 @@ body {
 }
 
 .insideWeb {
-  background-color: whitesmoke;
+  background-color: rgba(126, 161, 83, 0.425);
 }
 
 .title {
@@ -38,6 +38,7 @@ body {
 .navbar-fixed {
   overflow: hidden;
   background-color: rgba(51, 51, 51, .8);
+  background-image: url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80");
 }
 
 .navbar-fixed a {
@@ -47,6 +48,7 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  
 }
 
 .navbar-fixed a:hover {
@@ -192,4 +194,25 @@ body {
   margin: 10%;
   text-align: center;
   border-radius: 5%;
+}
+
+.animal {
+  margin: 50px auto;
+  width: 300px;
+  text-align: center;
+  color: black;
+  border: 2px solid black;
+  border-radius: 10%;
+  background-color: whitesmoke;
+  padding: 20px 20px 20px;
+  padding-top: 10px;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+}
+
+.edit-button {
+  color: white;
 }
